@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صفحتك الشخصية</title>
+  <!-- مكتبة الأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #003d2e, #0a0a0a, #005f46);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: rgba(27, 27, 27, 0.9);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      max-width: 450px;
+      width: 100%;
+      backdrop-filter: blur(8px);
+      border: 1px solid #00b89433;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .card h2 {
+      font-size: 22px;
+      color: #ffffff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 6px #00b894aa;
+      font-weight: 600;
+      letter-spacing: 1px;
+      animation: fadeIn 1.8s ease-out;
+    }
+
+    .card img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #00b894;
+      box-shadow: 0 0 15px #00b89488;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .card h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #fdfdfd;
+      text-shadow: 0 0 5px #00b894;
+      animation: fadeIn 2.2s ease-out;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      animation: fadeIn 2.5s ease-out;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #fff;
+      background: #222;
+      padding: 12px;
+      border-radius: 12px;
+      transition: 0.3s;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+    }
+
+    .links a i {
+      font-size: 20px;
+    }
+
+    .links a:hover {
+      background: #00b894;
+      color: #111;
+      border: 1px solid #00ffbb;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00b894aa;
+    }
+
+    /* زر الاتصال المتوهج */
+    .call-button {
+      margin-top: 25px;
+      display: inline-block;
+      background: #00b894;
+      color: #111;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+      animation: pulse 1.8s infinite, fadeIn 2.8s ease-out;
+      box-shadow: 0 0 25px #00b894;
+    }
+
+    .call-button i {
+      margin-left: 8px;
+    }
+
+    .call-button:hover {
+      background: #00ffbb;
+      box-shadow: 0 0 35px #00ffbb;
+      transform: scale(1.07);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #00ffbb, 0 0 20px #00b894, 0 0 30px #00b894; }
+      50% { box-shadow: 0 0 20px #00ffbb, 0 0 40px #00b894, 0 0 60px #00b894; }
+      100% { box-shadow: 0 0 10px #00ffbb, 0 0 20px #00b894, 0 0 30px #00b894; }
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 13px;
+      color: #aaa;
+      animation: fadeIn 3s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>My Personal Social Media Accounts</h2>
+    <img src="hitham.jpg.jpeg" alt="صورتك">
+    <h1>Dr / Hitham Essam</h1>
+
+    <div class="links">
+      <a href="https://www.facebook.com/share/1BfpfxLXGC/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+      <a href="https://www.instagram.com/dr_hith_oom?igsh=ZXc2NTVldWZqczl6" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://wa.me/qr/4R3H5P67BFRGP1" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://www.tiktok.com/@dr.hithoom7?_t=ZS-90vZAYBXBxf&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+      <a href="https://www.snapchat.com/add/dr_hitham?share_id=6z1l80Kf8Mk&locale=ar-AA" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a>
+      <a href="https://x.com/dr_hitham_?t=EF1liHD9lb6zeLqH0qdo3w&s=09" target="_blank"><i class="fab fa-x-twitter"></i> </a>
+    </div>
+
+    <!-- زر الاتصال المتوهج -->
+    <a href="tel:+201095951870" class="call-button"><i class="fa fa-phone"></i>   Call Me Now</a>
+
+    <footer>© جميع الحقوق محفوظة</footer>
+        <footer>مُــخــتــلــف
+   </footer>
+
+  </div>
+
+</body>
+</html>
