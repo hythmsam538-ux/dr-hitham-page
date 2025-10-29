@@ -14,20 +14,22 @@
     }
 
     body {
-      font-family: 'Tajawal', sans-serif;
-      color: #fff;
-      background: var(--bg-dark);
-      background-size: 400% 400%;
-      animation: gradientMove 10s ease infinite;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 15px;
-      overflow: hidden;
-      transition: 0.8s ease background, 0.8s ease color;
-    }
+  font-family: 'Tajawal', sans-serif;
+  color: #fff;
+  background: var(--bg-dark);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 15px;
+  overflow-y: auto; /* ✅ يسمح بالتمرير العمودي */
+  overflow-x: hidden; /* يمنع التمرير الأفقي */
+  transition: 0.8s ease background, 0.8s ease color;
+}
+
 
     @keyframes gradientMove {
       0% { background-position: 0% 50%; }
@@ -284,7 +286,7 @@
       <a href="https://www.facebook.com/share/1BfpfxLXGC/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
       <a href="https://www.instagram.com/dr_hith_oom" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
       <a href="https://wa.me/201095951870" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="https://t.me/dr_hithoom" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+      <a href="https://t.me/Dr_hith_oom" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
       <a href="https://www.tiktok.com/@dr.hithoom7" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
       <a href="https://x.com/dr_hitham_" target="_blank"><i class="fab fa-x-twitter"></i> </a>
     </div>
