@@ -25,7 +25,7 @@
       min-height: 100vh;
       margin: 0;
       padding: 15px;
-      overflow: hidden;
+      overflow-x: hidden;
       transition: 0.8s ease background, 0.8s ease color;
     }
 
@@ -270,9 +270,25 @@
       color: white;
     }
 
+    /* 🟢 شريط التمرير الجانبي */
+    #scroll-progress {
+      position: fixed;
+      right: 10px;
+      top: 0;
+      width: 6px;
+      height: 0;
+      background: var(--main-color);
+      border-radius: 4px;
+      z-index: 9999;
+      box-shadow: 0 0 10px var(--main-color);
+      transition: height 0.2s ease-out;
+    }
   </style>
 </head>
 <body>
+
+  <!-- 🟢 شريط التمرير الجانبي -->
+  <div id="scroll-progress"></div>
 
   <!-- 🌟 شاشة البداية -->
   <div id="intro-screen">
@@ -284,7 +300,8 @@
   <div class="card">
     <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
 
-<img src="IMAG.jpg" alt="صورتك">    <h1>Dr / Hitham Essam</h1>
+    <img src="hitham.jpg.jpeg" alt="صورتك">
+    <h1>Dr / Hitham Essam</h1>
     <p class="bio"><i class="fas fa-stethoscope"></i> Faculty of Medicine</p>
     <p class="quote">“ 𝑌𝑜𝑢 𝑎𝑟𝑒 𝑤ℎ𝑎𝑡 𝑦𝑜𝑢 𝑡ℎ𝑖𝑛𝑘 ”</p>
 
@@ -350,6 +367,14 @@
     const links = document.querySelectorAll('.links a');
     links.forEach((link, index) => {
       link.style.animationDelay = `${index * 0.2 + 3.5}s`;
+    });
+
+    // 🟢 شريط التمرير الجانبي
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.getElementById('scroll-progress').style.height = scrollPercent + '%';
     });
   </script>
 </body>
