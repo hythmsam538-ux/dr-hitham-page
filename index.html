@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Page</title>
+  <title>Dr Hitham Essam</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -14,22 +14,20 @@
     }
 
     body {
-  font-family: 'Tajawal', sans-serif;
-  color: #fff;
-  background: var(--bg-dark);
-  background-size: 400% 400%;
-  animation: gradientMove 10s ease infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0;
-  padding: 15px;
-  overflow-y: auto; /* ✅ يسمح بالتمرير العمودي */
-  overflow-x: hidden; /* يمنع التمرير الأفقي */
-  transition: 0.8s ease background, 0.8s ease color;
-}
-
+      font-family: 'Tajawal', sans-serif;
+      color: #fff;
+      background: var(--bg-dark);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 15px;
+      overflow: hidden;
+      transition: 0.8s ease background, 0.8s ease color;
+    }
 
     @keyframes gradientMove {
       0% { background-position: 0% 50%; }
@@ -37,6 +35,36 @@
       100% { background-position: 0% 50%; }
     }
 
+    /* 🌟 شاشة البداية */
+    #intro-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadeOut 1s ease forwards;
+      animation-delay: 2.8s;
+    }
+
+    #intro-screen img {
+      width: 280px;
+      max-width: 80%;
+      animation: fadeInLogo 2s ease;
+    }
+
+    @keyframes fadeInLogo {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    /* ✨ نجوم الخلفية */
     .stars {
       position: absolute;
       width: 100%;
@@ -63,6 +91,7 @@
       100% { transform: translateY(0) scale(1); opacity: 0.8; }
     }
 
+    /* 🟩 البطاقة */
     .card {
       position: relative;
       background: rgba(27, 27, 27, 0.9);
@@ -75,13 +104,17 @@
       backdrop-filter: blur(8px);
       border: 1px solid #00b89433;
       z-index: 2;
-      animation: fadeIn 1.5s ease-out;
-      transition: 0.5s ease background, 0.5s ease color;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInCard 1.5s ease-out forwards;
+      animation-delay: 3s;
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
+    @keyframes fadeInCard {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .theme-toggle {
@@ -109,12 +142,6 @@
       transform: scale(1.1);
     }
 
-    .card h2 {
-      font-size: 16px;
-      margin-bottom: 15px;
-      text-shadow: 0 0 5px #00b894aa;
-    }
-
     .card img {
       width: 182px;
       height: 182px;
@@ -133,21 +160,13 @@
 
     .bio {
       font-size: 15px;
-      color: #fff;
       margin-top: -8px;
       margin-bottom: 6px;
-      font-weight: 400;
       text-shadow: 0 0 6px rgba(0, 255, 200, 0.4);
-    }
-
-    .bio i {
-      color: #00ffcc;
-      margin-right: 5px;
     }
 
     .quote {
       font-size: 14px;
-      color: #ffffff;
       opacity: 0.9;
       margin-bottom: 15px;
       text-shadow: 0 0 8px rgba(0, 184, 148, 0.5);
@@ -197,7 +216,6 @@
       font-size: 15px;
       font-weight: 600;
       text-decoration: none;
-      transition: 0.3s;
       box-shadow: 0 0 20px #00b894;
     }
 
@@ -242,22 +260,6 @@
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
     }
 
-    body.light .bio {
-      color: #333 !important;
-      text-shadow: none;
-    }
-
-    body.light .bio i {
-      color: #00b894;
-    }
-
-    body.light .quote {
-      color: #000000;
-      text-shadow: none;
-      opacity: 1;
-      font-style: initial;
-    }
-
     body.light .links a {
       background: #f0f0f0;
       color: #111;
@@ -272,11 +274,15 @@
 </head>
 <body>
 
+  <!-- 🌟 شاشة البداية -->
+  <div id="intro-screen">
+    <img src="intro.png" alt="Intro Logo">
+  </div>
+
   <div class="stars" id="stars"></div>
 
   <div class="card">
     <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
-    <h2>My Personal Social Media Accounts</h2>
 
 <img src="IMAG.jpg" alt="صورتك">    <h1>Dr / Hitham Essam</h1>
     <p class="bio"><i class="fas fa-stethoscope"></i> Faculty of Medicine</p>
@@ -288,9 +294,7 @@
       <a href="https://wa.me/201095951870" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       <a href="https://t.me/Dr_hith_oom" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
       <a href="https://www.tiktok.com/@dr.hithoom7" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-      <a href="https://www.snapchat.com/add/dr_hitham?share_id=6z1l80Kf8Mk&locale=ar-AA_" target="_blank">
-  <i class="fab fa-snapchat-ghost"></i> Snapchat
-</a>
+      <a href="https://www.snapchat.com/add/dr_hitham?share_id=6z1l80Kf8Mk&locale=ar-AA_" target="_blank"><i class="fab fa-snapchat-ghost"></i> Snapchat</a>
       <a href="https://x.com/dr_hitham_" target="_blank"><i class="fab fa-x-twitter"></i> </a>
     </div>
 
@@ -306,6 +310,7 @@
   </div>
 
   <script>
+    // 🌙 تبديل الوضع الليلي / النهاري
     const toggleButton = document.getElementById('theme-toggle');
     const body = document.body;
     const savedTheme = localStorage.getItem('theme');
@@ -321,7 +326,7 @@
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
 
-    // عداد الزيارات
+    // 🔢 عداد الزيارات
     let count = localStorage.getItem('visitCount') || 0;
     count++;
     localStorage.setItem('visitCount', count);
@@ -330,7 +335,7 @@
       e.currentTarget.classList.toggle('show');
     });
 
-    // توليد النجوم
+    // ✨ توليد النجوم
     const starsContainer = document.getElementById('stars');
     for (let i = 0; i < 70; i++) {
       const star = document.createElement('span');
@@ -341,10 +346,10 @@
       starsContainer.appendChild(star);
     }
 
-    // تسلسل دخول الأزرار
+    // 🕓 تسلسل ظهور الأزرار
     const links = document.querySelectorAll('.links a');
     links.forEach((link, index) => {
-      link.style.animationDelay = `${index * 0.2 + 0.5}s`;
+      link.style.animationDelay = `${index * 0.2 + 3.5}s`;
     });
   </script>
 </body>
